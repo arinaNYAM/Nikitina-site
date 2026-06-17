@@ -378,3 +378,50 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--pink-bg); c
   .product-grid { grid-template-columns: 1fr; }
   .footer { padding: 16px; flex-wrap: wrap; }
 }
+
+/* ===== MOBILE IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .brand {
+    position: static;
+    transform: none;
+  }
+
+  .nav-sub {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .search-bar {
+    padding: 12px 16px;
+  }
+
+  .categories,
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-card img {
+    height: auto;
+    max-height: 350px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-item {
+    width: 100%;
+  }
+
+  .price-range {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
