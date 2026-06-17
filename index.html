@@ -1,0 +1,222 @@
+<!-- ФАЙЛ: index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROSE CODE — Авторские букеты</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="page active">
+    <div class="login-wrapper">
+      <!-- LEFT: full background image with overlay text -->
+      <div class="login-left">
+        <img src="flowers/reg.png" alt="Букет роз" class="login-bg-img">
+        <div class="login-left-overlay">
+          <div class="login-brand-top">ROSE CODE</div>
+          <p class="login-tagline">Авторские букеты для особых моментов</p>
+        </div>
+        <div class="login-feature-bottom">
+          <strong>Красивое оформление</strong><br>
+          Стильная упаковка в подарок
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="login-right">
+        <h2>Войти</h2>
+        <p class="login-sub">Добро пожаловать в <strong>ROSE CODE</strong></p>
+        <div class="login-tabs">
+          <button class="tab-btn active" onclick="switchTab('login')">Вход</button>
+          <button class="tab-btn" onclick="switchTab('register')">Регистрация</button>
+        </div>
+        <div id="loginForm">
+          <div class="input-group">
+            <span class="input-icon">✉</span>
+            <input type="text" placeholder="Почта или телефон">
+          </div>
+          <div class="input-group">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="passwordField" placeholder="Пароль">
+            <span class="input-toggle" onclick="togglePassword()">👁</span>
+          </div>
+          <div class="login-options">
+            <label><input type="checkbox"> Запомнить меня</label>
+            <a href="#" class="link-pink">Забыли пароль?</a>
+          </div>
+          <button class="btn-pink" onclick="goToMain()">Войти</button>
+          <p class="login-footer">Нет аккаунта? <a href="#" class="link-pink" onclick="switchTab('register')">Зарегистрироваться</a></p>
+        </div>
+        <div id="registerForm" style="display:none">
+          <div class="input-group">
+            <span class="input-icon">👤</span>
+            <input type="text" placeholder="Имя и фамилия">
+          </div>
+          <div class="input-group">
+            <span class="input-icon">✉</span>
+            <input type="text" placeholder="Почта или телефон">
+          </div>
+          <div class="input-group">
+            <span class="input-icon">🔒</span>
+            <input type="password" placeholder="Пароль">
+          </div>
+          <button class="btn-pink" onclick="goToMain()">Зарегистрироваться</button>
+          <p class="login-footer">Уже есть аккаунт? <a href="#" class="link-pink" onclick="switchTab('login')">Войти</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="mainPage" class="page">
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="#" onclick="showPage('main')">Главная</a>
+        <a href="#" onclick="showPage('catalog')">Каталог</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+      </div>
+      <div class="brand">ROSE CODE</div>
+      <div class="nav-icons">
+        <span class="icon-btn" onclick="showCart()">🛒</span>
+        <span class="icon-btn" onclick="showPage('login')">👤</span>
+      </div>
+    </nav>
+    <div class="nav-sub">
+      <a href="#">Акции</a>
+      <a href="#">Как заказать букет</a>
+      <a href="#">Доставка и оплата</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Поиск" id="searchInput">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <!-- MAIN LAYOUT: categories + footer all visible -->
+    <div class="main-content">
+      <div class="categories">
+        <div class="cat-card" onclick="showPage('catalog')">
+          <img src="flowers/big.png" alt="Большие букеты">
+          <p>Большие  букеты</p>
+        </div>
+        <div class="cat-card" onclick="showPage('catalog')">
+          <img src="flowers/medium.png" alt="Средние букеты">
+          <p>Средние  букеты</p>
+        </div>
+        <div class="cat-card" onclick="showPage('catalog')">
+          <img src="flowers/small.png" alt="Маленькие букеты">
+          <p>Маленькие  букеты</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-item"><div class="footer-icon">🚚</div><strong>Быстрая доставка</strong><p>Доставим букет в день заказа</p></div>
+        <div class="footer-item"><div class="footer-icon">🛡</div><strong>Свежие цветы</strong><p>Гарантия свежести каждого букета</p></div>
+        <div class="footer-item"><div class="footer-icon">🎁</div><strong>Красивое оформление</strong><p>Стильная упаковка в подарок</p></div>
+        <div class="footer-item"><div class="footer-icon">💝</div><strong>Индивидуальный подход</strong><p>Подберем букет под ваш запрос</p></div>
+        <div class="footer-item"><div class="footer-icon">📍</div><strong>г. Ижевск</strong><p>Пушкинская 123</p></div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- CATALOG PAGE -->
+  <div id="catalogPage" class="page">
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="#" onclick="showPage('main')">Главная</a>
+        <a href="#" onclick="showPage('catalog')">Каталог</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+      </div>
+      <div class="brand">ROSE CODE</div>
+      <div class="nav-icons">
+        <span class="icon-btn" onclick="showCart()">🛒</span>
+        <span class="icon-btn" onclick="showPage('login')">👤</span>
+      </div>
+    </nav>
+
+    <div class="catalog-layout">
+      <aside class="sidebar">
+        <h2>Каталог</h2>
+        <div class="filter-section">
+          <div class="filter-label">СОРТИРОВКА</div>
+          <label class="radio-label"><input type="radio" name="sort" value="new" checked onchange="applyFilters()"> По новизне</label>
+          <label class="radio-label"><input type="radio" name="sort" value="popular" onchange="applyFilters()"> По популярности</label>
+          <label class="radio-label"><input type="radio" name="sort" value="cheap" onchange="applyFilters()"> Сначала дешевле</label>
+          <label class="radio-label"><input type="radio" name="sort" value="expensive" onchange="applyFilters()"> <strong>Сначала дороже</strong></label>
+        </div>
+        <div class="filter-section">
+          <div class="filter-label">Цена</div>
+          <div class="price-range">
+            <span>от</span>
+            <input type="number" id="priceMin" value="1600" onchange="applyFilters()">
+            <span>—</span>
+            <span>до</span>
+            <input type="number" id="priceMax" value="95900" onchange="applyFilters()">
+          </div>
+        </div>
+        <div class="filter-section">
+          <div class="filter-label">Цветовая гамма</div>
+          <div class="color-swatches">
+            <span class="swatch" style="background:#f8c8d4"></span>
+            <span class="swatch" style="background:#f4a0b5"></span>
+            <span class="swatch" style="background:#e05070"></span>
+            <span class="swatch" style="background:#f5e6a3"></span>
+            <span class="swatch" style="background:#f0c040"></span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="catalog-main">
+        <h2>Букеты</h2>
+        <div class="filter-tags">
+          <button class="tag active" onclick="filterTag(this,'all')">Розы</button>
+          <button class="tag" onclick="filterTag(this,'p4000')">4000</button>
+          <button class="tag" onclick="filterTag(this,'p8000')">8000</button>
+          <button class="tag" onclick="filterTag(this,'mixed')">Сборные</button>
+          <button class="tag" onclick="filterTag(this,'comp')">Композиции</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-item"><div class="footer-icon">🚚</div><strong>Быстрая доставка</strong><p>Доставим букет в день заказа</p></div>
+      <div class="footer-item"><div class="footer-icon">🛡</div><strong>Свежие цветы</strong><p>Гарантия свежести каждого букета</p></div>
+      <div class="footer-item"><div class="footer-icon">🎁</div><strong>Красивое оформление</strong><p>Стильная упаковка в подарок</p></div>
+      <div class="footer-item"><div class="footer-icon">💝</div><strong>Индивидуальный подход</strong><p>Подберем букет под ваш запрос</p></div>
+      <div class="footer-item"><div class="footer-icon">📍</div><strong>г. Ижевск</strong><p>Пушкинская 123</p></div>
+    </footer>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal-overlay" onclick="closeProductModal()">
+    <div class="product-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProductModal()">✕</button>
+      <img id="modalImg" src="" alt="">
+      <div class="modal-info">
+        <h3 id="modalName"></h3>
+        <div id="modalPrice" class="modal-price"></div>
+        <button class="btn-pink" onclick="addModalToCart()">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART MODAL -->
+  <div id="cartModal" class="modal-overlay" onclick="hideCart()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <h3>Корзина</h3>
+      <div id="cartItems"><p class="empty-cart">Корзина пуста</p></div>
+      <div id="cartTotal" class="cart-total"></div>
+      <button class="btn-pink" onclick="checkout()">Оформить заказ</button>
+      <button class="btn-outline" onclick="hideCart()">Продолжить покупки</button>
+    </div>
+  </div>
+
+  <div id="alertBox" class="alert-box"></div>
+  <script src="script.js"></script>
+</body>
+</html>
